@@ -42,11 +42,11 @@ public class ResultInfo<T extends Object> implements Serializable {
         return new ResultInfo(code, message);
     }
 
-    public static ResultInfo fail(ResultCode resultCode) {
+    public static ResultInfo fail(IResultCode resultCode) {
         return ResultInfo.fail(resultCode.getCode(), resultCode.getMessage());
     }
 
-    public static ResultInfo failFormat(ResultCode resultCode, Object... args) {
+    public static ResultInfo failFormat(IResultCode resultCode, Object... args) {
         String message = resultCode.getMessage();
         if (args != null && args.length != 0) {
             message = String.format(resultCode.getMessage(), args);

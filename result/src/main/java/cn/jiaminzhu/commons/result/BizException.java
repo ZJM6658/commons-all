@@ -14,7 +14,7 @@ public class BizException extends RuntimeException {
         this.code = Constant.YES_ERROR;
     }
 
-    public BizException(ErrorCode errorCode) {
+    public BizException(IResultCode errorCode) {
         super(errorCode.getMessage());
         this.code = errorCode.getCode();
     }
